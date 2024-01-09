@@ -53,8 +53,8 @@ class PromptTemplate:
             self.revision_request = revision_request
         else:
             critique_revision_request = random.choice(self.constitution_settings["critique_revision_requests"])
-            self.critique_request = critique_revision_request["critique_request"]
-            self.revision_request = critique_revision_request["revision_request"]
+            self.critique_request = critique_revision_request["critique"]
+            self.revision_request = critique_revision_request["revision"]
 
     def get_system_prompt(self, message):
         """
