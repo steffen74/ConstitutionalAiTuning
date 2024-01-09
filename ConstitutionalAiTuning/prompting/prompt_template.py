@@ -93,7 +93,7 @@ class PromptTemplate:
             # Format the conversation history as a single string
             conversation_history = f"Human: {example.get('input', '')}\n" + \
                                    f"Assistant: {example.get('initial_answer', '')}\n\n" + \
-                                   f"CritiqueRequest: {example.get('critique_request', '')}"
+                                   f"---\nCritiqueRequest: {example.get('critique_request', '')}"
             user_input = {
                 "role": "user",
                 "content": conversation_history
@@ -111,7 +111,7 @@ class PromptTemplate:
             "role": "user",
             "content": f"Human: {self.input}\n"
                        f"Assistant: {self.initial_answer}\n\n"
-                       f"CritiqueRequest: {self.critique_request}",
+                       f"---\nCritiqueRequest: {self.critique_request}",
         }]
         # Combine prefix, few shot examples, and input
         return self.get_prefix_critique() + self.generate_few_shot_critique() + input_prompt
@@ -122,9 +122,9 @@ class PromptTemplate:
             # Format the complete conversation history as a single string
             conversation_history = f"Human: {example.get('input', '')}\n" + \
                                    f"Assistant: {example.get('initial_answer', '')}\n" + \
-                                   f"CritiqueRequest: {example.get('critique_request', '')}\n" + \
+                                   f"---\nCritiqueRequest: {example.get('critique_request', '')}\n" + \
                                    f"Critique: {example.get('critique', '')}\n\n" + \
-                                   f"RevisionRequest: {example.get('revision_request', '')}"
+                                   f"---\nRevisionRequest: {example.get('revision_request', '')}"
             user_input = {
                 "role": "user",
                 "content": conversation_history
@@ -142,9 +142,9 @@ class PromptTemplate:
             "role": "user",
             "content": f"Human: {self.input}\n"
                        f"Assistant: {self.initial_answer}\n\n"
-                       f"CritiqueRequest: {self.critique_request}"
+                       f"---\nCritiqueRequest: {self.critique_request}"
                        f"Critique: {self.critique}\n\n"
-                       f"RevisionRequest: {self.revision_request}",
+                       f"---\nRevisionRequest: {self.revision_request}",
         }]
         # Combine prefix, few shot examples, and input
         return self.get_prefix_revision() + self.generate_few_shot_revision() + input_prompt
