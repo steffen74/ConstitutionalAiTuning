@@ -90,23 +90,20 @@ class PromptTemplate:
     def generate_few_shot_critique(self):
         few_shot_critique_prompt = []
         for example in self.constitution_settings["examples"]:
-            input = {
+            # Format the conversation history as a single string
+            conversation_history = f"Human: {example.get('input', '')}\n" + \
+                                   f"Assistant: {example.get('initial_answer', '')}\n\n" + \
+                                   f"CritiqueRequest: {example.get('critique_request', '')}"
+            user_input = {
                 "role": "user",
-                "content": example.get("input", "")
+                "content": conversation_history
             }
-            initial_answer = {
-                "role": "assistant",
-                "content": example.get("initial_answer", "")
-            }
-            critique_request = {
-                "role": "system",
-                "content": "CritiqueRequest: " + example.get("critique_request", "")
-            }
-            critique = {
+            # Assistant's critique response
+            assistant_critique = {
                 "role": "assistant",
                 "content": "Critique: " + example.get("critique", "")
-            }        
-            few_shot_critique_prompt.extend([input, initial_answer, critique_request, critique])
+            }
+            few_shot_critique_prompt.extend([user_input, assistant_critique])
         return few_shot_critique_prompt
 
     def generate_critique_prompt(self):
@@ -122,29 +119,24 @@ class PromptTemplate:
     def generate_few_shot_revision(self):
         few_shot_revision_prompt = []
         for example in self.constitution_settings["examples"]:
-            input = {
+            # Format the complete conversation history as a single string
+            conversation_history = f"Human: {example.get('input', '')}\n" + \
+                                   f"Assistant: {example.get('initial_answer', '')}\n" + \
+                                   f"CritiqueRequest: {example.get('critique_request', '')}\n" + \
+                                   f"Critique: {example.get('critique', '')}\n\n" + \
+                                   f"RevisionRequest: {example.get('revision_request', '')}"
+            user_input = {
                 "role": "user",
-                "content": example.get("input", "")
+                "content": conversation_history
             }
-            initial_answer = {
+            # Assistant's revision response
+            assistant_revision = {
                 "role": "assistant",
-                "content": example.get("initial_answer", "")
+                "content": "Revision: " + example.get("revision", "")
             }
-            critique_request = {
-                "role": "system",
-                "content": "CritiqueRequest: " + example.get("critique_request", "")
-            }
-            critique = {
-                "role": "assistant",
-                "content": "Critique: " + example.get("critique", "")
-            }
-            revision_request = {
-                "role": "system",
-                "content": "RevisionRequest: " + example.get("revision_request", "")
-            }
-            few_shot_revision_prompt.extend([input, initial_answer, critique_request, critique, revision_request])
+            few_shot_revision_prompt.extend([user_input, assistant_revision])
         return few_shot_revision_prompt
-
+    
     def generate_revision_prompt(self):
         input_prompt = [{
             "role": "user",
