@@ -71,21 +71,21 @@ class PromptTemplate:
             "content": message,
         }]
 
-    def generate_system_prompt_initial_asnwer(self):
-        return self.generate_system_prompt(self.constitution_instructions["prefix_input"])
+    def generate_system_prompt_initial_answer(self):
+        return self.generate_system_prompt(self.constitution_instructions["system_message_question"])
     
     def generate_system_prompt_critique(self):
-        return self.generate_system_prompt(self.constitution_instructions["prefix_critique"])
+        return self.generate_system_prompt(self.constitution_instructions["system_message_critique"])
     
     def generate_system_prompt_revision(self):
-        return self.generate_system_prompt(self.constitution_instructions["prefix_revision"])
+        return self.generate_system_prompt(self.constitution_instructions["system_message_revision"])
 
     def generate_initial_answer_prompt(self):
         input_prompt = [{
             "role": "user",
             "content": self.question,
         }]
-        return self.generate_system_prompt_initial_asnwer() + input_prompt
+        return self.generate_system_prompt_initial_answer() + input_prompt
 
     def generate_few_shot_critique_prompt(self):
         few_shot_critique_prompt = []
