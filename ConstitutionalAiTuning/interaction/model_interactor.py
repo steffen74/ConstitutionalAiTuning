@@ -1,3 +1,5 @@
+import time
+import random
 import transformers
 from typing import List, Dict, Any
 from ConstitutionalAiTuning.prompting.prompt_template import PromptTemplate
@@ -53,39 +55,82 @@ class ModelInteractor:
         )
         return outputs[0]["generated_text"]
 
+    def run_single_interaction(
+        self, 
+        questions: List[Dict[str, Any]], 
+        constitution_settings: Dict[str, Any],
+        question_index: int = None,
+        verbose: bool = True
+    ) -> Dict[str, Any]:
+        """
+        Runs a single interaction cycle (initial answer, critique, revision) 
+        for a specified or randomly selected input prompt, with control over verbosity.
+        Returns a dictionary with the interaction history.
+
+        Args:
+            questions (list): A list of questions.
+            constitution_instructions (dict): Instructions for generating the prompts loaded from the constitution.
+            question_index (int, optional): Index of the specific question to be used. If None, a random question is selected.
+            verbose (bool): If True, prints the results and execution time. Defaults to True.
+
+        Returns:
+            dict: Dictionary containing the selected question and interaction history (initial answer, critique, revision).
+        """
+        # Select a specific or random prompt
+        if question_index is not None and question_index < len(questions):
+            prompt = questions[question_index]
+        else:
+            prompt = random.choice(questions)
+
+        cai_prompts = PromptTemplate(
+            input=prompt["input_prompt"],
+            prompt_instructions=constitution_settings
+        )
+
+        interaction_history = {"input_prompt": prompt["input_prompt"]}
+
+        # Process each stage (initial answer, critique, revision) and print if verbose is True
+        for stage in ['initial_answer', 'critique', 'revision']:
+            start_time = time.time()
+            generated_prompt = getattr(cai_prompts, f'generate_{stage}_prompt')()
+            response = self.execute_llm_request(generated_prompt)
+            end_time = time.time()
+
+            setattr(cai_prompts, stage, response)
+            interaction_history[stage] = response
+
+            if verbose:
+                print(f"{stage.replace('_', ' ').title()}: {response}")
+                print("Time Taken:", end_time - start_time, "seconds\n")
+
+        return interaction_history
+
     def run_interaction_loop(
         self, 
-        input_prompts: List[Dict[str, Any]], 
+        questions: List[Dict[str, Any]], 
         constitution_settings: Dict[str, Any]
     ) -> List[Dict[str, Any]]:
         """
         Loops over prompts for generating answers, critiques, and revisions.
+        Uses the run_single_interaction method for each prompt.
 
         Args:
-            input_prompts (list): A list of input prompts.
-            constitution_settings (dict): Settings loaded from the constitution.
+            questions (list): A list of questions.
+            constitution_instructions (dict): Instructions for generating the prompts loaded from the constitution.
 
         Returns:
-            list: A list of prompts with given input prompts, generated initial answers, selected critique request, critiques, selected revision request, and revisions.
+            list: A list of dictionaries, each containing the question and interaction history (initial answer,     critique, revision).
         """
         sft_data = []
 
-        for prompt in input_prompts:
-            cai_prompts = PromptTemplate(
-                input=prompt["input_prompt"],
-                prompt_instructions=constitution_settings
+        for index, question in enumerate(questions):
+            # Use run_single_interaction for each prompt
+            interaction_result = self.run_single_interaction(
+                questions, 
+                constitution_settings, 
+                question_index=index, 
+                verbose=False  # Set verbose to False to avoid printing during loop
             )
-
-            # Generate and execute prompts
-            initial_answer_prompt = cai_prompts.generate_initial_answer_prompt()
-            cai_prompts.initial_answer = self.execute_llm_request(initial_answer_prompt)
-
-            critique_prompt = cai_prompts.generate_critique_prompt()
-            cai_prompts.critique = self.execute_llm_request(critique_prompt)
-
-            revision_prompt = cai_prompts.generate_revision_prompt()
-            cai_prompts.revision = self.execute_llm_request(revision_prompt)
-
-            sft_data.append(cai_prompts.get_history())
+            sft_data.append(interaction_result)
 
         return sft_data

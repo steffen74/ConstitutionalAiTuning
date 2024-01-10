@@ -31,7 +31,6 @@ Here is a basic example of how to use `ConstitutionalAiTuning`:
 ```python
 import torch
 from transformers import pipeline
-from ConstitutionalAiTuning.prompting import PromptTemplate
 from ConstitutionalAiTuning.constitution_loader import load_constitution
 from ConstitutionalAiTuning.interaction import ModelInteractor
 
@@ -44,35 +43,34 @@ text_gen_pipeline = pipeline(
 )
 
 # Load a constitution file (see examples/educational_assistant.json for an example)
-constitution = load_constitution('path/to/constitution.json') # Replace with the actual path to your constitution file
-
-# Create a PromptTemplate instance
-template = PromptTemplate(input="Your input here", prompt_instructions=constitution)
-
-# Generate initial answer prompt
-initial_prompt = template.generate_initial_answer_prompt()
+# Replace with the actual path to your constitution file
+constitution = load_constitution('examples/educational_assistant.json')
 
 # Initialize the ModelInteractor with the pipeline
 interactor = ModelInteractor(text_gen_pipeline)
 
-# Execute the LLM request using the generated prompt
-initial_answer = interactor.execute_llm_request(initial_prompt)
-
-print("Initial Answer:", initial_answer)
-
 # Example input prompts (assuming a list of prompts)
-input_prompts = [{'input_prompt': 'Example prompt 1'}, {'input_prompt': 'Example prompt 2'}]
+questions = [{'question': 'Example question 1'}, {'question': 'Example question 2'}]
+
+# Run a single interaction with the first prompt in the list
+single_interaction_response = interactor.run_single_interaction(input_prompts, constitution, prompt_index=0)
+
+print("Single Interaction Response:")
+print("Question:", single_interaction_response['question'])
+print("Initial Answer:", single_interaction_response['initial_answer'])
+print("Critique:", single_interaction_response['critique'])
+print("Revision:", single_interaction_response['revision'])
+print("\n")
 
 # Run the interaction loop to get responses for each prompt
 responses = interactor.run_interaction_loop(input_prompts, constitution)
 
-# Display the responses
+# Display the responses from the interaction loop
+print("Interaction Loop Responses:")
 for response in responses:
-    print("Input Prompt:", response['input_prompt'])
+    print("Question:", response['question'])
     print("Initial Answer:", response['initial_answer'])
-    print("Critique Request:", response['critique_request'])
     print("Critique:", response['critique'])
-    print("Revision Request:", response['revision_request'])
     print("Revision:", response['revision'])
     print("\n")
 ```
