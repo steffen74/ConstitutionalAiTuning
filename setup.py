@@ -1,11 +1,19 @@
 from setuptools import setup, find_packages
 
+# Add these lines to read the version from __init__.py
+import re
+import os
+
+def get_version(package):
+    init_py = open(os.path.join(package, '__init__.py')).read()
+    return re.search("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
+
 with open('requirements.txt') as f:
     required_packages = f.read().splitlines()
 
 setup(
     name='ConstitutionalAiTuning',
-    version='0.1.0',
+    version=get_version('ConstitutionalAiTuning'),  # Use the function to get the version
     author='Steffen Brandt',
     author_email='steffen@opencampus.sh',
     description='A Python library for fine-tuning LLMs using constitutional AI principles.',
@@ -21,4 +29,3 @@ setup(
     ],
     python_requires='>=3.8',
 )
-

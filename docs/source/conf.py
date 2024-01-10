@@ -171,6 +171,3 @@ texinfo_documents = [
      author, 'ConstitutionalAiTuning', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
