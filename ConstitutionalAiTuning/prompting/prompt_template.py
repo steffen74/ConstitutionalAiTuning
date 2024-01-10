@@ -22,7 +22,7 @@ class PromptTemplate:
         critique=None,
         revision_request=None,
         revision=None,
-        constitution_settings=None  # This should be a dictionary
+        constitution_settings=None
     ):
         """
         Initializes the PromptTemplate class with the provided arguments.
@@ -56,7 +56,7 @@ class PromptTemplate:
             self.critique_request = critique_revision_request["critique"]
             self.revision_request = critique_revision_request["revision"]
 
-    def get_system_prompt(self, message):
+    def generate_system_prompt(self, message):
         """
         Generates a system prompt with the given message.
 
@@ -71,23 +71,23 @@ class PromptTemplate:
             "content": message,
         }]
 
-    def get_prefix_input(self):
-        return self.get_system_prompt(self.constitution_settings["prefix_input"])
+    def generate_system_prompt_initial_asnwer(self):
+        return self.generate_system_prompt(self.constitution_settings["prefix_input"])
     
-    def get_prefix_critique(self):
-        return self.get_system_prompt(self.constitution_settings["prefix_critique"])
+    def generate_system_prompt_critique(self):
+        return self.generate_system_prompt(self.constitution_settings["prefix_critique"])
     
-    def get_prefix_revision(self):
-        return self.get_system_prompt(self.constitution_settings["prefix_revision"])
+    def generate_system_prompt_revision(self):
+        return self.generate_system_prompt(self.constitution_settings["prefix_revision"])
 
     def generate_initial_answer_prompt(self):
         input_prompt = [{
             "role": "user",
             "content": self.input,
         }]
-        return self.get_prefix_input() + input_prompt
+        return self.generate_system_prompt_initial_asnwer() + input_prompt
 
-    def generate_few_shot_critique(self):
+    def generate_few_shot_critique_prompt(self):
         few_shot_critique_prompt = []
         for example in self.constitution_settings["examples"]:
             # Format the conversation history as a single string
@@ -114,9 +114,9 @@ class PromptTemplate:
                        f"---\nCritiqueRequest: {self.critique_request}",
         }]
         # Combine prefix, few shot examples, and input
-        return self.get_prefix_critique() + self.generate_few_shot_critique() + input_prompt
+        return self.generate_system_prompt_critique() + self.generate_few_shot_critique_prompt() + input_prompt
 
-    def generate_few_shot_revision(self):
+    def generate_few_shot_revision_prompt(self):
         few_shot_revision_prompt = []
         for example in self.constitution_settings["examples"]:
             # Format the complete conversation history as a single string
@@ -147,7 +147,7 @@ class PromptTemplate:
                        f"---\nRevisionRequest: {self.revision_request}",
         }]
         # Combine prefix, few shot examples, and input
-        return self.get_prefix_revision() + self.generate_few_shot_revision() + input_prompt
+        return self.generate_system_prompt_revision() + self.generate_few_shot_revision_prompt() + input_prompt
 
     def get_history(self):
         return {
