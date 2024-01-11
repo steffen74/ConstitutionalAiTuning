@@ -26,8 +26,7 @@ share/python-wheels/
 MANIFEST
 
 # Sphinx documentation (adjust as per your deployment method)
-docs/builder
-docs/doctrees
+docs/build/doctrees
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
