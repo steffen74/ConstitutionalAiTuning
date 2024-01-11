@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -25,6 +24,11 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# Sphinx documentation (adjust as per your deployment method)
+docs/build/builder
+docs/build/doctrees
+!docs/build/html/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -67,9 +71,6 @@ instance/
 
 # Scrapy stuff:
 .scrapy
-
-# Sphinx documentation
-docs/_build/
 
 # PyBuilder
 .pybuilder/
