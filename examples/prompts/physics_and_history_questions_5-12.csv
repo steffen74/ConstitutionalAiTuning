@@ -1,0 +1,504 @@
+subject,grade,prompt,first_word,prompt_length
+physics,5,Why does a ball thrown in the air come back down?,Why,49
+history,5,What were some daily activities of children in ancient Egypt?,What,61
+physics,7,What causes the different seasons we experience on Earth?,What,57
+physics,8,What is the role of gravity in keeping planets in orbit around the sun?,What,71
+history,8,Why was the Magna Carta important in the history of democracy?,Why,62
+physics,10,What is the theory of relativity and why is it important in physics?,What,68
+history,10,How did the Renaissance contribute to the scientific revolution?,How,64
+physics,12,What are black holes and why are they significant in the study of the universe?,What,79
+history,12,How did the Industrial Revolution lead to changes in social structures?,How,71
+physics,5,What makes magnets attract or repel each other?,What,47
+physics,6,How does a prism split white light into colors?,How,47
+physics,9,What is the significance of the conservation of energy principle?,What,65
+history,9,What effects did Christopher Columbus' voyages have on the world?,What,65
+physics,11,What is the significance of Schrödinger's cat in quantum theory?,What,64
+history,12,What were the social and economic impacts of the discovery of the New World?,What,76
+history,5,What was life like for children during the Middle Ages?,What,55
+physics,6,How does friction affect the speed of moving objects?,How,53
+history,6,How did the ancient Egyptians build the pyramids?,How,49
+physics,7,What causes sound and how does it travel?,What,41
+physics,8,Why do objects appear smaller when they are farther away?,Why,57
+history,8,How did exploration in the 15th and 16th centuries change the world?,How,68
+history,9,What was the role of women in World War II?,What,43
+physics,11,How does the Large Hadron Collider help us understand the universe?,How,67
+physics,12,What are gravitational waves and why are they important?,What,56
+history,12,How did the fall of the Berlin Wall affect global politics?,How,59
+physics,5,What causes a rainbow to appear in the sky?,What,43
+physics,6,What is the difference between potential and kinetic energy?,What,60
+history,6,Why is the Magna Carta considered a foundational document in history?,Why,69
+history,7,What impact did Marco Polo's travels have on the world?,What,55
+physics,8,What is the role of photosynthesis in the environment?,What,54
+history,8,How did the French Revolution change the course of European history?,How,68
+physics,11,How does special relativity affect our understanding of time and space?,How,71
+physics,12,Can you explain how GPS technology relies on principles of physics?,Can,67
+history,8,How did the invention of the compass impact exploration?,How,56
+physics,9,What is the Doppler Effect and how does it relate to sound and light?,What,69
+physics,11,What are the implications of Heisenberg's Uncertainty Principle?,What,64
+physics,12,Can you explain the concept of dark matter and dark energy?,Can,59
+physics,5,Why do we need to wear seatbelts in a car?,Why,42
+history,5,What are some famous myths from Greek mythology?,What,48
+history,8,Why is the Declaration of Independence important in American history?,Why,69
+physics,9,How do fiber optics transmit information using light?,How,53
+history,9,What was the impact of the gold rush on American expansion?,What,59
+history,10,What role did nationalism play in the unification of Italy and Germany?,What,71
+history,11,How did the partition of India and Pakistan affect the region?,How,62
+physics,12,What is the significance of the Higgs Boson in particle physics?,What,64
+physics,6,Why do objects look smaller when viewed through the opposite end of binoculars?,Why,79
+history,6,What were the key contributions of Ancient Greece to modern society?,What,68
+physics,7,How do magnets generate electricity in a generator?,How,51
+physics,8,What causes the phases of the Moon?,What,35
+history,8,What were the achievements of the Mayan civilization?,What,53
+physics,9,How do submarines dive and resurface in the ocean?,How,50
+history,10,What were the main causes of the American Civil War?,What,52
+physics,11,How do telescopes help us see distant objects in space?,How,55
+physics,12,Can you explain the concept of the multiverse theory in physics?,Can,64
+physics,5,"Why do we use different scales (Celsius, Fahrenheit) to measure temperature?",Why,76
+history,5,Who was Confucius and what was his impact on Chinese culture?,Who,61
+physics,6,Why does a mirror reflect an image?,Why,35
+history,6,How did the geography of ancient Egypt shape its culture?,How,57
+history,7,How did the Renaissance spread across Europe?,How,45
+physics,8,How do GPS systems use satellites to determine location?,How,56
+physics,9,What are the different types of renewable energy sources?,What,57
+history,9,How did colonialism impact the countries of Africa?,How,51
+physics,10,How does the Doppler radar work?,How,32
+history,10,What role did propaganda play in World War I?,What,45
+physics,11,What are the differences between fission and fusion nuclear reactions?,What,70
+physics,12,How does quantum entanglement challenge our understanding of physics?,How,69
+history,12,What was the significance of Nelson Mandela's presidency in South Africa?,What,73
+history,5,What was the daily life of a knight during the Middle Ages?,What,59
+physics,6,How do plants contribute to the oxygen in the air?,How,50
+history,7,How did explorers like Vasco da Gama change world history?,How,58
+history,8,How did the Scientific Revolution change our view of the universe?,How,66
+history,9,What was the Harlem Renaissance and its impact on American culture?,What,67
+physics,12,Can you explain the significance of the cosmic microwave background radiation?,Can,78
+physics,5,Why do we see stars twinkle?,Why,28
+physics,6,How do shadows change throughout the day?,How,41
+physics,7,How does a bicycle stay upright when moving?,How,44
+physics,8,What are the effects of pollution on the environment?,What,53
+history,9,What was the impact of industrialization on cities?,What,51
+physics,12,Can you explain the importance of the standard model of particle physics?,Can,73
+history,12,How did the Civil Rights Movement in the United States change the country?,How,74
+physics,5,How does a sundial tell time?,How,29
+physics,6,Why do boats made of steel float?,Why,33
+history,6,How did the Renaissance artists contribute to art and culture?,How,62
+history,8,How did the Enlightenment thinkers influence modern philosophy?,How,63
+history,9,What was the role of women during the French Revolution?,What,56
+physics,11,How does the Aurora Borealis occur?,How,35
+history,11,What were the consequences of the partition of India and Pakistan?,What,66
+physics,12,Can you explain the significance of laser technology in modern physics?,Can,71
+history,12,How did the Vietnam War shape American society and politics?,How,60
+physics,7,Why does sound travel faster in water than in air?,Why,50
+physics,9,How does a refrigerator keep food cold?,How,39
+physics,10,What is the significance of the photoelectric effect in physics?,What,64
+physics,12,Can you explain the concept of wavefunction in quantum mechanics?,Can,65
+history,12,How did the end of apartheid change South Africa?,How,49
+physics,6,Why do we see a blue sky during the day?,Why,40
+physics,7,How does a magnet affect a compass needle?,How,42
+physics,9,What is the principle behind fiber optic communication?,What,55
+history,9,What impact did the Silk Road have on the exchange of ideas and goods?,What,70
+physics,10,How does sonar technology work?,How,31
+history,10,What were the motivations and consequences of European exploration?,What,67
+physics,11,What is the significance of superconductors?,What,44
+physics,12,Can you explain the physics behind a black hole's event horizon?,Can,64
+physics,5,Why do we use insulation materials in houses?,Why,45
+history,5,What were the contributions of Leonardo da Vinci during the Renaissance?,What,72
+history,6,How did the feudal system work?,How,31
+physics,7,What is the science behind rainbows?,What,36
+history,7,What was the impact of Marco Polo's journey on Europe and Asia?,What,63
+history,9,What were the causes of the French and Indian War?,What,50
+physics,11,What is the principle of a heat engine?,What,39
+physics,12,How do particle accelerators work?,How,34
+history,12,What was the impact of the Marshall Plan after World War II?,What,60
+physics,5,How do plants help in reducing air pollution?,How,45
+physics,8,How does a battery store and release energy?,How,44
+history,10,How did the discovery of the New World affect Europe?,How,53
+physics,12,What is the significance of the cosmic speed limit (speed of light)?,What,68
+history,12,How did the Space Race affect the Cold War?,How,43
+physics,5,How does a lever make lifting easier?,How,37
+history,5,Who was Julius Caesar and what was his impact on Rome?,Who,54
+physics,6,What is the science behind the formation of rain?,What,49
+physics,8,How do light bulbs convert electricity into light?,How,50
+history,9,How did the Ottoman Empire influence European history?,How,54
+physics,10,How do drones navigate and fly?,How,31
+history,10,What were the consequences of the abolition of slavery?,What,55
+physics,11,How does the photoelectric effect support the particle theory of light?,How,71
+history,11,What was the role of propaganda in shaping public opinion in the 20th century?,What,78
+physics,12,Can you explain the phenomenon of quantum tunneling?,Can,52
+history,12,How did the Civil Rights Movement impact global human rights policies?,How,70
+physics,5,Why do boats have sails?,Why,24
+history,6,How did the Reformation impact religious practices in Europe?,How,61
+history,9,What was the significance of the French Revolution on global politics?,What,70
+physics,10,What are semiconductors and why are they important in electronics?,What,66
+history,10,How did Napoleon's rule change Europe?,How,38
+physics,12,Can you explain the principle of laser cooling?,Can,47
+history,12,How did the Arab Spring change the political landscape in the Middle East?,How,74
+history,5,Who was Alexander the Great and what was his impact on history?,Who,63
+history,6,How did the Great Wall of China impact the country's history?,How,61
+physics,9,What is the principle behind an electric generator?,What,51
+history,10,What were the causes and effects of the Meiji Restoration in Japan?,What,67
+physics,11,What is the role of electromagnetism in everyday technology?,What,60
+physics,12,Can you explain the phenomenon of superfluidity in physics?,Can,59
+physics,5,How does a magnifying glass make small things look big?,How,55
+history,5,What was daily life like in a medieval European village?,What,56
+physics,6,Why do we see the moon during the day sometimes?,Why,48
+history,6,How did the Renaissance affect daily life in Europe?,How,52
+history,7,Who were the Aztecs and what was their culture like?,Who,52
+physics,8,What is the Coriolis effect?,What,28
+history,8,What role did religion play in the lives of people during the Middle Ages?,What,74
+history,9,How did the Age of Exploration affect the indigenous populations of the Americas?,How,81
+physics,10,How do fiber optic cables transmit data?,How,40
+physics,12,What role does plasma play in the universe?,What,43
+history,12,How did the Cold War impact cultural expressions in the United States and Soviet Union?,How,87
+history,5,What did people eat in ancient Rome?,What,36
+history,6,What were the key achievements of the Islamic Golden Age?,What,57
+history,7,How did explorers like Christopher Columbus change the world?,How,61
+physics,8,How do wind and water shape the landscape?,How,42
+physics,9,Why do we use alternating current (AC) in our homes instead of direct current (DC)?,Why,83
+history,10,How did the American Civil War change the United States?,How,56
+history,11,How did the Industrial Revolution affect urban life?,How,52
+physics,12,How does the Hubble Space Telescope work?,How,41
+physics,6,What causes a rainbow to form?,What,30
+physics,7,How does a compass point to the North?,How,38
+physics,8,How is energy converted in a hydroelectric power plant?,How,55
+history,8,How did the geography of Greece influence its culture and politics?,How,67
+history,9,What role did trade play in the growth of empires?,What,50
+physics,11,What is the concept of wave-particle duality in quantum mechanics?,What,66
+physics,12,What is the significance of CERN's Large Hadron Collider?,What,57
+history,5,How were the pyramids of Egypt built?,How,37
+history,6,What role did art play in Ancient Greece?,What,41
+history,7,What was the impact of the Silk Road on global trade?,What,53
+history,8,How did the French Revolution influence other countries?,How,56
+history,10,What were the effects of the Gold Rush on American society?,What,59
+history,11,How did the Meiji Restoration change Japan?,How,43
+physics,12,How does quantum computing differ from traditional computing?,How,61
+physics,5,Why do planets orbit the Sun?,Why,29
+physics,7,What is the role of insulation in keeping houses warm or cool?,What,62
+history,7,How did the feudal system work in medieval Europe?,How,50
+physics,8,What are renewable and non-renewable energy sources?,What,52
+history,8,What was the cultural impact of the Harlem Renaissance?,What,55
+history,9,How did the Age of Enlightenment influence political thought?,How,61
+history,12,How did World War II affect the global balance of power?,How,56
+history,5,What was life like for a Roman soldier?,What,39
+physics,6,How do plants use sunlight to grow?,How,35
+history,6,What was the importance of the Roman aqueducts?,What,47
+physics,7,What is static electricity?,What,27
+history,8,What was the significance of the Berlin Wall during the Cold War?,What,65
+physics,9,What is the role of friction in car brakes?,What,43
+physics,10,How do geothermal power plants work?,How,36
+history,10,What was the impact of the French Revolution on other countries?,What,64
+physics,11,What is the principle behind solar panels?,What,42
+history,11,How did the Marshall Plan influence post-World War II Europe?,How,61
+physics,12,How does the theory of relativity explain black holes?,How,54
+physics,5,How do rain clouds form?,How,24
+physics,6,How do plants convert sunlight into energy?,How,43
+history,6,What were the main goals of the explorers during the Age of Discovery?,What,70
+physics,7,What are the colors of the rainbow and why do they appear in that order?,What,72
+history,8,How did the Roman Empire fall and what were the consequences?,How,61
+physics,9,What is the role of aerodynamics in airplane design?,What,52
+physics,10,How do we measure the speed of light?,How,37
+physics,11,How do black holes form?,How,24
+physics,12,How does nuclear fusion power the Sun?,How,38
+physics,5,Why do we have day and night?,Why,29
+history,5,How did the ancient Egyptians use the Nile River?,How,49
+physics,6,What causes earthquakes?,What,24
+history,7,How did the Ottoman Empire impact world history?,How,48
+physics,9,How does a thermostat control temperature?,How,42
+physics,11,What is the concept of antimatter in physics?,What,45
+physics,5,Why do we have high and low tides?,Why,34
+physics,6,What causes a solar eclipse?,What,28
+history,7,How did the Renaissance affect science and art?,How,47
+physics,10,What is the principle of electromagnetic induction?,What,51
+physics,11,How do satellites orbit Earth?,How,30
+history,11,What was the impact of the Great Depression globally?,What,53
+history,12,How did the end of colonialism change the world?,How,48
+history,6,How did the Vikings influence Europe?,How,37
+physics,7,Why do objects have weight?,Why,27
+physics,10,What are gamma rays and how are they detected?,What,46
+history,10,How did World War II start?,How,27
+physics,11,What is the role of neutrinos in the universe?,What,46
+physics,12,How does the principle of superposition apply in quantum mechanics?,How,67
+history,12,What was the impact of the Internet on global communications?,What,61
+history,5,How were pyramids built in ancient Egypt?,How,41
+physics,8,What is the Big Bang theory?,What,28
+physics,10,What is the photoelectric effect?,What,33
+history,10,What were the consequences of the Age of Exploration?,What,53
+physics,12,What is the theory of everything in physics?,What,44
+physics,6,What is static electricity and how is it created?,What,49
+history,6,What was the importance of the Code of Hammurabi?,What,49
+physics,7,How does sound travel through air?,How,34
+physics,10,What is the Doppler effect in physics?,What,38
+physics,11,What are the differences between classical and quantum physics?,What,63
+physics,12,How does the concept of entropy relate to the universe's future?,How,64
+history,12,What were the causes and effects of World War II?,What,49
+physics,5,How does sound travel through different materials?,How,50
+history,7,What was the importance of the Nile River in ancient Egyptian civilization?,What,75
+physics,8,What causes the Northern Lights?,What,32
+physics,9,How does a digital clock keep time?,How,35
+history,9,What were the effects of the bubonic plague on Europe?,What,54
+physics,10,What is the role of photons in light?,What,37
+history,10,What was the impact of Napoleon Bonaparte on Europe?,What,52
+physics,5,Why do balloons deflate over time?,Why,34
+physics,6,What causes the colors in a sunset?,What,35
+history,6,How did the Roman Republic differ from the Empire?,How,50
+physics,7,What is a vacuum in space?,What,26
+history,7,How did Marco Polo's travels impact the world?,How,46
+physics,9,How do elevators work safely?,How,29
+history,11,How did the Renaissance influence modern thought?,How,49
+physics,12,What are the challenges in achieving nuclear fusion?,What,52
+physics,5,Why do leaves change color in the fall?,Why,39
+physics,7,What causes wind?,What,17
+physics,8,What is the function of a transformer in electrical circuits?,What,61
+physics,11,How do fiber optic cables work?,How,31
+history,11,What were the causes of the Great Depression?,What,45
+physics,5,Why is the sky blue during the day and black at night?,Why,54
+history,5,What were the roles of the Senate and the Emperor in Ancient Rome?,What,66
+physics,7,What is the difference between speed and velocity?,What,50
+physics,8,How do we measure the distance to stars?,How,40
+physics,10,How do we use the periodic table in chemistry?,How,46
+physics,12,What are exoplanets and how do we find them?,What,44
+physics,6,Why do we see mirages?,Why,22
+history,6,What were the contributions of the Byzantine Empire?,What,52
+physics,7,What is the function of a battery?,What,34
+physics,8,What are the different types of clouds and how do they form?,What,60
+physics,12,How does the Large Hadron Collider work?,How,40
+physics,5,Why do we feel warmer in sunlight?,Why,34
+history,7,How did the Renaissance impact the world?,How,41
+history,9,What were the effects of colonialism on the Americas?,What,53
+physics,11,How do space telescopes work?,How,29
+physics,12,How does quantum field theory work?,How,35
+history,12,How did the Reformation change the religious landscape of Europe?,How,65
+physics,5,How do boats float on water?,How,28
+physics,6,How does a prism create a rainbow?,How,34
+history,6,How did the Roman Empire impact the modern world?,How,49
+physics,7,Why do we hear sound later than we see light?,Why,45
+physics,8,How does gravity keep the planets in orbit?,How,43
+history,8,Why was the Magna Carta significant in history?,Why,47
+physics,9,How does Newton's Third Law apply to rocket launches?,How,53
+physics,11,Can you explain quantum mechanics?,Can,34
+physics,12,Why are black holes important in studying the universe?,Why,55
+history,5,Who were the Vikings and what are they known for?,Who,49
+physics,6,Why does white light split into colors in a prism?,Why,50
+history,6,What impact did the Roman Empire have on modern legal systems?,What,62
+physics,7,Why do we see lightning before thunder?,Why,39
+history,7,What role did the Great Wall of China play?,What,43
+physics,10,How does the greenhouse effect contribute to global warming?,How,60
+history,11,How did Gandhi's non-violence affect India's independence?,How,58
+physics,12,Can you explain string theory?,Can,30
+physics,5,Why does ice float on water?,Why,28
+history,6,How were the Egyptian pyramids built?,How,37
+history,7,What was the American Revolution's significance?,What,48
+physics,8,Why do objects look smaller when far away?,Why,42
+history,8,How did 15th-16th century exploration change the world?,How,55
+physics,10,What are thermodynamics' basic principles?,What,42
+history,10,How did the steam engine affect society?,How,40
+physics,11,What is the Large Hadron Collider's purpose?,What,44
+history,11,What were the Treaty of Versailles' major outcomes?,What,51
+physics,12,Why are gravitational waves important?,Why,38
+physics,5,What causes rainbows?,What,21
+history,5,How did Native American tribes differ across North America?,How,59
+history,6,Why is the Magna Carta a key historical document?,Why,49
+physics,7,How do plants make food from sunlight?,How,38
+physics,9,How does the Periodic Table organize elements?,How,46
+history,9,What caused the American Civil War?,What,35
+history,11,What impact did the Industrial Revolution have on urbanization?,What,63
+physics,12,How does GPS technology rely on physics?,How,40
+history,12,What was the Cuban Missile Crisis' significance?,What,48
+history,5,What was a samurai's life like in feudal Japan?,What,47
+physics,6,Why do objects cast shadows?,Why,28
+history,6,What role did the Silk Road play in cultural exchange?,What,54
+history,7,Why was the Rosetta Stone's discovery significant?,Why,50
+physics,8,Why do we have leap years?,Why,26
+history,8,How did the compass change exploration?,How,39
+physics,9,What is the Doppler Effect for sound and light?,What,47
+history,10,What were the American Revolution's key events?,What,47
+physics,11,What does Heisenberg's Uncertainty Principle imply?,What,51
+history,11,How did World War II reshape the global map?,How,44
+physics,12,What is dark matter and dark energy?,What,36
+history,12,How did World War I and II use propaganda?,How,42
+physics,5,Why are seatbelts necessary in cars?,Why,36
+history,5,What are some famous Greek myths?,What,33
+physics,6,How does a magnifying glass enlarge images?,How,43
+history,6,How did the Aztecs build their empire?,How,38
+physics,7,Why is Mars called the Red Planet?,Why,34
+physics,8,What causes tsunamis?,What,21
+history,9,What was the American gold rush's impact?,What,41
+physics,10,How does a transformer work in electrical circuits?,How,51
+history,10,How did nationalism affect Italy and Germany's unification?,How,59
+physics,11,Can you explain entropy in thermodynamics?,Can,42
+history,11,What impact did the India-Pakistan partition have?,What,50
+physics,12,What is the Higgs Boson's significance in particle physics?,What,59
+history,12,How did the Vietnam War affect international relations and domestic politics in the U.S.?,How,89
+history,5,What were some of the major achievements of Ancient China?,What,58
+physics,6,What causes sound waves?,What,24
+history,6,How did the Greek philosophy influence the modern world?,How,56
+physics,7,What is the principle behind a pulley system?,What,45
+physics,8,How does a thermos keep liquids hot or cold?,How,44
+history,8,What role did trade routes play in ancient civilizations?,What,57
+physics,9,What are the basic principles of aerodynamics?,What,46
+history,9,How did the Age of Enlightenment change society?,How,48
+physics,10,How do polarized sunglasses work?,How,33
+physics,7,What causes the tides in the oceans?,What,36
+history,7,What were the key features of feudalism?,What,40
+history,8,What was the significance of the Gutenberg press?,What,49
+physics,9,How do LED lights work?,How,23
+physics,10,What is the role of enzymes in the human body?,What,46
+physics,11,What are the principles of genetic inheritance?,What,47
+physics,5,Why do we sweat when we're hot?,Why,31
+physics,6,How do plants absorb water?,How,27
+history,6,How did ancient civilizations use astronomy?,How,44
+physics,8,What is nuclear power and how is it generated?,What,46
+physics,10,How do wind turbines generate electricity?,How,42
+physics,5,How does a plant grow from a seed?,How,34
+history,5,What were the key features of Spartan society?,What,46
+history,6,What role did religion play in the Aztec civilization?,What,54
+physics,7,How does a bicycle stay balanced?,How,33
+physics,9,What is the importance of biodiversity?,What,39
+physics,12,What are the latest advancements in renewable energy?,What,53
+history,12,What was the significance of the Cuban Missile Crisis?,What,54
+physics,5,Why does the Moon change shape?,Why,31
+physics,6,How do birds migrate long distances?,How,36
+physics,7,How do different materials conduct heat?,How,40
+history,9,What was the impact of the voyages of Christopher Columbus?,What,59
+physics,11,What are the principles of quantum physics?,What,43
+history,12,How did the formation of the United Nations change global politics?,How,67
+history,5,What were the main functions of the Roman Senate?,What,49
+physics,6,How do volcanoes form?,How,22
+history,7,How did the Byzantine Empire influence the modern world?,How,56
+physics,8,What are the causes of climate change?,What,38
+history,8,What was the impact of the Reformation on religious institutions?,What,65
+physics,9,How does Wi-Fi work?,How,20
+history,12,How did World War II affect civil rights movements around the world?,How,68
+history,5,What were the main contributions of the Ancient Incas?,What,54
+physics,6,Why do we see different colors?,Why,31
+history,7,What was the role of the samurai in feudal Japan?,What,49
+history,8,What impact did the Viking explorations have on Europe?,What,55
+history,10,How did the Enlightenment influence modern science?,How,51
+physics,11,How does a GPS system determine location?,How,41
+physics,12,What are the uses of nanotechnology?,What,36
+physics,5,Why do we have seasons?,Why,23
+physics,6,What causes earthquakes and volcanoes?,What,38
+history,6,How did the Silk Road influence ancient trade?,How,46
+physics,8,What is photosynthesis?,What,23
+physics,11,What is the Higgs boson?,What,24
+physics,12,What are the latest developments in space exploration?,What,54
+history,12,What was the impact of the Cold War on global politics?,What,55
+history,5,What was daily life like in ancient Mesopotamia?,What,48
+physics,6,What is the solar system?,What,25
+physics,9,How do plants reproduce?,How,24
+history,11,How did colonialism impact Africa and Asia?,How,43
+physics,12,What is the theory of relativity?,What,33
+history,12,How did World War II change international relations?,How,52
+physics,5,Why do objects fall to the ground?,Why,34
+physics,6,What are acids and bases?,What,25
+physics,8,What is the periodic table?,What,27
+history,8,How did the Ottoman Empire rise to power?,How,41
+physics,9,How does the Internet work?,How,27
+physics,12,What are the challenges of Mars colonization?,What,45
+history,6,How did the Middle Ages shape modern Europe?,How,44
+physics,7,What is the Milky Way galaxy?,What,29
+physics,8,How do we measure earthquakes?,How,30
+physics,10,What are renewable energy sources?,What,34
+physics,11,How does the human brain work?,How,30
+physics,12,What is artificial intelligence?,What,32
+history,12,How did the Vietnam War affect America?,How,39
+physics,5,Why do we need to drink water?,Why,30
+history,5,What was the impact of Alexander the Great's conquests?,What,55
+history,6,How did the Crusades affect Europe?,How,35
+physics,7,What is the structure of an atom?,What,33
+physics,12,What is the significance of the human genome project?,What,53
+history,12,What was the impact of the fall of the Soviet Union?,What,52
+history,5,What was life like in ancient Athens?,What,37
+physics,6,How does a vacuum cleaner work?,How,31
+physics,7,What are the phases of the Moon and how do they occur?,What,54
+history,7,How did the Han Dynasty impact China?,How,37
+physics,8,How does a computer process information?,How,40
+history,8,What was the impact of Marco Polo's travels?,What,44
+physics,9,What is nuclear energy and how is it produced?,What,46
+physics,10,What is string theory in physics?,What,33
+history,10,How did the Age of Exploration impact the world?,How,48
+physics,11,How do rockets reach space?,How,27
+physics,12,What are the latest advancements in robotics?,What,45
+history,12,How did the Gulf War impact the Middle East?,How,44
+physics,5,How do bees make honey?,How,23
+physics,6,How do plants use carbon dioxide?,How,33
+history,6,What were the main causes of the fall of the Roman Empire?,What,58
+history,7,What was the impact of the Renaissance on global exploration?,What,61
+physics,9,How does a smartphone touch screen work?,How,40
+history,11,What was the significance of the Berlin Conference in 1884?,What,59
+physics,12,What are the possibilities of space tourism?,What,44
+physics,5,Why do we blink?,Why,16
+history,5,What was the culture of the Ancient Mayans?,What,43
+physics,6,What is the process of photosynthesis?,What,38
+history,6,How did the Byzantine Empire contribute to history?,How,51
+physics,7,How does a pendulum clock work?,How,31
+physics,8,What are the basics of electrical circuits?,What,43
+history,8,How did the Silk Road affect global trade?,How,42
+physics,9,How do windmills generate power?,How,32
+physics,11,What is the function of DNA in genetics?,What,40
+physics,12,How does artificial intelligence learn?,How,39
+history,12,What was the impact of the Korean War?,What,38
+physics,5,How does a flashlight create light?,How,35
+history,6,What role did knights play in medieval society?,What,47
+physics,7,How do sound waves travel?,How,26
+history,7,How did the Phoenicians contribute to ancient trade?,How,52
+history,12,What was the impact of Nelson Mandela's presidency?,What,51
+physics,5,How does soap clean?,How,20
+physics,6,What is the water cycle?,What,24
+history,6,How did the Crusades impact the Middle Ages?,How,44
+physics,7,What causes lightning and thunder?,What,34
+history,8,What were the causes of the Spanish Armada's failure?,What,53
+physics,10,How do we measure the age of the Earth?,How,39
+history,10,What were the consequences of the Treaty of Versailles?,What,55
+physics,11,How does the International Space Station work?,How,46
+physics,12,What are the challenges in achieving sustainable energy?,What,56
+physics,5,How do birds migrate?,How,21
+physics,6,What are fossils and how are they formed?,What,41
+physics,8,How does a thermometer measure temperature?,How,43
+physics,10,How do 3D printers work?,How,24
+physics,11,What are the effects of global warming?,What,39
+physics,12,How is technology used in modern medicine?,How,42
+physics,5,How do plants get nutrients from soil?,How,38
+history,5,What was life like in a medieval castle?,What,40
+physics,8,How does a solar eclipse occur?,How,31
+physics,10,How does an airplane's black box work?,How,38
+physics,11,How does a fusion reactor work?,How,31
+history,11,What was the impact of the Spanish conquest on the Americas?,What,60
+physics,12,How do quantum computers function?,How,34
+history,12,How did the Internet revolutionize communication?,How,49
+physics,5,How do fish sleep?,How,18
+history,7,What was the impact of the Magna Carta on English history?,What,58
+physics,8,What causes global warming?,What,27
+physics,10,How does nuclear fission produce energy?,How,40
+physics,11,What are black holes?,What,21
+history,11,How did the Treaty of Versailles contribute to World War II?,How,60
+physics,12,What is the importance of the Hubble Space Telescope?,What,53
+physics,5,Why do we yawn?,Why,15
+history,5,What were the main features of Roman architecture?,What,50
+physics,6,What is the function of the heart in the human body?,What,52
+history,6,How did the Black Death affect Europe?,How,38
+physics,7,What is the role of gravity in our solar system?,What,48
+history,7,How did the Silk Road facilitate trade and cultural exchange?,How,61
+physics,10,How does the immune system work?,How,32
+history,11,How did colonialism shape modern Africa?,How,40
+physics,5,How do animals adapt to their environment?,How,42
+history,8,What was the role of women in ancient civilizations?,What,52
+physics,10,What is the theory of plate tectonics?,What,38
+physics,11,How does the human brain process information?,How,45
+physics,12,What are the challenges of deep space exploration?,What,50
+physics,5,How do bees pollinate plants?,How,29
+history,5,What was life like in the Roman Empire?,What,39
+physics,6,How does a plant make food?,How,27
+physics,7,What causes volcanic eruptions?,What,31
+physics,9,How does a telescope magnify distant objects?,How,45
+history,9,What was the impact of the Age of Exploration on indigenous populations?,What,72
+history,10,What were the effects of imperialism on colonized countries?,What,60
+physics,12,What is the significance of gene therapy?,What,41
+physics,5,Why do we need vitamins?,Why,24
+physics,6,How do bridges support weight?,How,30
+physics,7,How does a radio transmit sound?,How,32
+physics,9,How does a GPS system work?,How,27
+physics,10,What are stem cells and how can they be used?,What,45
+physics,11,How do satellites stay in orbit?,How,32
+history,11,How did World War I reshape European borders?,How,45
+history,12,What was the impact of the end of apartheid in South Africa?,What,60

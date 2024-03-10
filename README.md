@@ -29,6 +29,8 @@ import torch
 from transformers import pipeline
 from ConstitutionalAiTuning.constitution_loader import load_constitution
 from ConstitutionalAiTuning.interaction import ModelInteractor
+from ConstitutionalAiTuning.utils.data_utils import import_prompts_from_csv
+
 
 # Initialize the text generation pipeline (use an appropriate model)
 text_gen_pipeline = pipeline(
@@ -40,19 +42,19 @@ text_gen_pipeline = pipeline(
 
 # Load a constitution file (see examples/educational_assistant.json for an example)
 # Replace with the actual path to your constitution file
-constitution = load_constitution('examples/educational_assistant.json')
+constitution = load_constitution('examples/constitutions/educational_assistant.json')
 
 # Initialize the ModelInteractor with the pipeline
 interactor = ModelInteractor(text_gen_pipeline)
 
-# Example input prompts (assuming a list of prompts)
-questions = [{'question': 'Example question 1'}, {'question': 'Example question 2'}]
+# Import prompts from a CSV file
+prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
 
 # Run a single interaction with the first prompt in the list
-single_interaction_response = interactor.run_single_interaction(input_prompts, constitution, prompt_index=0)
+single_interaction_response = interactor.run_single_interaction(prompts, constitution, prompt_index=0)
 
 print("Single Interaction Response:")
-print("Question:", single_interaction_response['question'])
+print("User Prompt:", single_interaction_response['user_prompt'])
 print("Initial Answer:", single_interaction_response['initial_answer'])
 print("Critique:", single_interaction_response['critique'])
 print("Revision:", single_interaction_response['revision'])
@@ -64,7 +66,7 @@ responses = interactor.run_interaction_loop(input_prompts, constitution)
 # Display the responses from the interaction loop
 print("Interaction Loop Responses:")
 for response in responses:
-    print("Question:", response['question'])
+    print("User Prompt:", response['user_prompt'])
     print("Initial Answer:", response['initial_answer'])
     print("Critique:", response['critique'])
     print("Revision:", response['revision'])
