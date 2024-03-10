@@ -25,52 +25,45 @@ pip install git+https://github.com/steffen74/ConstitutionalAiTuning.git
 Here is a basic example of how to use `ConstitutionalAiTuning`:
 
 ```python
-import torch
-from transformers import pipeline
+# Install transformers from source - only needed for versions <= v4.34
+# pip install git+https://github.com/steffen74/ConstitutionalAiTuning.git
+# pip install git+https://github.com/huggingface/transformers.git
+# pip install accelerate
+
+import os
 from ConstitutionalAiTuning.constitution_loader import load_constitution
 from ConstitutionalAiTuning.interaction import ModelInteractor
 from ConstitutionalAiTuning.utils.data_utils import import_prompts_from_csv
 
-
-# Initialize the text generation pipeline (use an appropriate model)
-text_gen_pipeline = pipeline(
-    "text-generation",
-    model="HuggingFaceH4/zephyr-7b-beta",
-    torch_dtype=torch.bfloat16,
-    device_map="auto",
-)
+HF_API_KEY = os.getenv('HF_API_KEY')
 
 # Load a constitution file (see examples/educational_assistant.json for an example)
 # Replace with the actual path to your constitution file
 constitution = load_constitution('examples/constitutions/educational_assistant.json')
 
-# Initialize the ModelInteractor with the pipeline
-interactor = ModelInteractor(text_gen_pipeline)
+# Initialize the ModelInteractor with a model
+# Provide the Hugging Face API key if you want to use the Hugging Face inference API of that model (it must exist)
+# If you don't provide an API key, the model will be used locally
+interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
 
 # Import prompts from a CSV file
 prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
 
-# Run a single interaction with the first prompt in the list
+# Run a single interaction to get a revised response for the first prompt in the list
 single_interaction_response = interactor.run_single_interaction(prompts, constitution, prompt_index=0)
+single_interaction_response
 
-print("Single Interaction Response:")
-print("User Prompt:", single_interaction_response['user_prompt'])
-print("Initial Answer:", single_interaction_response['initial_answer'])
-print("Critique:", single_interaction_response['critique'])
-print("Revision:", single_interaction_response['revision'])
-print("\n")
-
-# Run the interaction loop to get responses for each prompt
+# Run the interaction loop to get revised responses for all prompts
 responses = interactor.run_interaction_loop(input_prompts, constitution)
 
 # Display the responses from the interaction loop
-print("Interaction Loop Responses:")
-for response in responses:
-    print("User Prompt:", response['user_prompt'])
-    print("Initial Answer:", response['initial_answer'])
-    print("Critique:", response['critique'])
-    print("Revision:", response['revision'])
-    print("\n")
+    print("\n#############################################")
+    print("user_prompt:\n", response["user_prompt"])
+    print("initial_answer:\n", response["initial_answer"])
+    print("critique_request:\n", response["critique_request"])
+    print("critique:\n", response["critique"])
+    print("revision_request:\n", response["revision_request"])
+    print("revision:\n", response["revision"])
 ```
 
 ### Explanation
@@ -83,7 +76,7 @@ for response in responses:
 
 - **Model Interactor**: We initialize the `ModelInteractor` class with the pipeline.
 
-- **Execute LLM Request**: Using the `execute_llm_request` method of `ModelInteractor`, we pass the generated prompt to get the initial answer.
+- **Execute Single Interaction Run**: Using the `run_single_interaction` method of `ModelInteractor`, we pass the user prompt to generate an initial answer, a critique, and a revised answer.
 
 - **Interaction Loop**: Demonstrates how to use the `run_interaction_loop` method to process multiple prompts and generate initial answers, critiques, and revisions.
 

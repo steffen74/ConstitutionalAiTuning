@@ -4,15 +4,10 @@
 # pip install accelerate
 
 import os
-import logging
 from ConstitutionalAiTuning.constitution_loader import load_constitution
 from ConstitutionalAiTuning.interaction import ModelInteractor
 from ConstitutionalAiTuning.utils.data_utils import import_prompts_from_csv
-from ConstitutionalAiTuning.prompting.prompt_template import PromptTemplate
 
-logging.basicConfig(level=logging.INFO)
-
-HF_API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
 HF_API_KEY = os.getenv('HF_API_KEY')
 
 
