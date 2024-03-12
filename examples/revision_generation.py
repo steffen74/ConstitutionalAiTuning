@@ -16,7 +16,8 @@ HF_API_KEY = os.getenv('HF_API_KEY')
 constitution = load_constitution('examples/constitutions/educational_assistant_short.json')
 
 # Initialize the ModelInteractor with a Hugging Face model
-interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
+interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY, endpoint_url="https://m07124gncoa31nmm.eu-west-1.aws.endpoints.huggingface.cloud")
+# interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
 
 # Import prompts from a CSV file
 prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
@@ -26,7 +27,8 @@ prompts = import_prompts_from_csv('examples/prompts/physics_and_history_question
 # single_interaction_response
 
 # Run the interaction loop to get responses for each prompt
-responses = interactor.run_interaction_loop(prompts[0:10], constitution)
+responses = interactor.run_interaction_loop(prompts, constitution)
+interactor.save_prompts_and_revisions_to_csv(responses, 'output.csv')
 
 # Display each initial user prompt, the texts of the randomly selected critique and revision pairs
 # as well as the generated intitial answer, critique, and revision
