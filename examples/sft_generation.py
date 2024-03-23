@@ -6,12 +6,12 @@ from ConstitutionalAiTuning.utils.data_utils import import_prompts_from_csv
 HF_API_KEY = os.getenv('HF_API_KEY')
 
 # Load a constitutional principles file
-constitution = load_principles('examples/principles/educational_assistant_short.json')
+principles = load_principles('examples/principles/educational_assistant_short.json')
 
 # Initialize the ModelInteractor with a Hugging Face model on a dedicated server
-interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY, endpoint_url="https://m07124gncoa31nmm.eu-west-1.aws.endpoints.huggingface.cloud")
+# interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY, endpoint_url="https://m07124gncoa31nmm.eu-west-1.aws.endpoints.huggingface.cloud")
 # To use the ModelInteractor with the free (but contrained) Hugging Face Inference API, use the following line instead:
-# interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
+interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
 # To run the ModelInteractor on a local machine, use the following line instead:
 # interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta")
 
@@ -19,11 +19,11 @@ interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key
 prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
 
 # Run a single answer improvement with a selected prompt in the list to test the generation of revised answers
-single_interaction_response = interactor.run_single_answer_improvement(prompts, constitution, 13)
+single_interaction_response = interactor.run_single_answer_improvement(prompts, principles, 2, verbose=True)
 single_interaction_response
 
 # Run a loop to get revised answers for all prompts
-responses = interactor.run_answer_improvement_loop(prompts, constitution)
+responses = interactor.run_answer_improvement_loop(prompts, principles)
 interactor.save_prompts_and_revisions_to_csv(responses, 'examples/training_data/educational_assistant_sft.csv')
 
 # For the first few prompts display the randomly selected critique and revision pairs,

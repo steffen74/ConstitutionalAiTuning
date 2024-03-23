@@ -14,7 +14,7 @@ HF_API_KEY = os.getenv('HF_API_KEY')
 principles = load_principles('examples/principles/educational_assistant_short.json')
 
 # Initialize the ModelInteractor with a Hugging Face model on a dedicated server
-interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY, endpoint_url="https://m07124gncoa31nmm.eu-west-1.aws.endpoints.huggingface.cloud")
+interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY, endpoint_url="https://bh646zb7ewi9eig6.eu-west-1.aws.endpoints.huggingface.cloud")
 # To use the ModelInteractor with the free (but contrained) Hugging Face Inference API, use the following line instead:
 # interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
 # To run the ModelInteractor on a local machine, use the following line instead:
@@ -24,11 +24,11 @@ interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key
 prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
 
 # # Run a single comparison of generated answers for a selected prompt in the list
-# single_comparison_response = interactor.run_single_comparison(prompts, principles, 13, verbose=True)
-# single_comparison_response
+single_comparison_response = interactor.run_single_comparison(prompts, principles, 2, verbose=True)
+single_comparison_response
 
 # Run a loop to get answer comparisons data for alls prompts
-responses = interactor.run_comparison_loop(prompts, principles)
+responses = interactor.run_async_comparison_loop(prompts[0:8], principles)
 interactor.save_comparison_data_to_csv(responses, 'examples/training_data/educational_assistant_dpo.csv')
 
 # Display each initial user prompt, the texts of the randomly selected critique and revision pairs
