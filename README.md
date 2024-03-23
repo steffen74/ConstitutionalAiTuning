@@ -4,25 +4,50 @@
 
 `ConstitutionalAiTuning` is a Python library designed to facilitate the fine-tuning of Large Language Models (LLMs) using the constitutional AI approach. This library provides tools for generating prompts for initial answers, critiques, and revisions, and includes utilities for managing different constitutions the LLM can be trained on.
 
-## Features
+## Table of Contents
 
-- **Prompt Template Generation**: Generate structured prompts for model training and evaluation.
-- **Constitution Loader**: Load and parse JSON files representing different constitutional setups.
-- **Model Interaction**: Interface with the LLM to obtain initial answers, critiques, and revisions.
-- **Fine-Tuning Utilities**: Tools to streamline the process of fine-tuning your LLM.
+- [About](#about)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Prompt Generation](#prompt-generation)
+  - [ModelInteractor](#modelinteractor)
+  - [Example](#example)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Installation
 
-To install `ConstitutionalAiTuning`, you can use the following pip command:
+You can install `ConstitutionalAiTuning` as follows:
 
 ```bash
 pip install git+https://github.com/steffen74/ConstitutionalAiTuning.git
 
 ```
 
+`ConstitutionalAiTuning` requires the following dependencies:
+
+```bash
+# Install transformers from source - only needed for versions <= v4.34
+pip install git+https://github.com/huggingface/transformers.git
+# Install accelerate
+pip install accelerate
+```
+
 ## Usage
 
-Here is a basic example of how to use `ConstitutionalAiTuning`:
+### Prompt Generation
+
+`ConstitutionalAiTuning` provides utilities for generating structured prompts for training data generation. The PromptTemplate class can be used to create prompts based on loaded constitutional principles.
+
+### ModelInteractor
+
+The `ModelInteractor` class is a central component of the library, responsible for interfacing with the LLM to obtain initial answers, critiques, and revisions for the generation of training data for instructional fine-tuning. For the generation of data for the human alignment training, it provides methods to obtain prefered answers from different generated answers.
+Further, it provides methods for running single interactions as well as looping over multiple prompts.
+
+### Example
+
+Here's an example of how to use ConstitutionalAiTuning to generate improved answers for an sintructional tuning of an LLM:
 
 ```python
 # Install transformers from source - only needed for versions <= v4.34
@@ -31,60 +56,49 @@ Here is a basic example of how to use `ConstitutionalAiTuning`:
 # pip install accelerate
 
 import os
-from ConstitutionalAiTuning.constitution_loader import load_constitution
+from ConstitutionalAiTuning.principles_loader import load_principles
 from ConstitutionalAiTuning.interaction import ModelInteractor
 from ConstitutionalAiTuning.utils.data_utils import import_prompts_from_csv
 
 HF_API_KEY = os.getenv('HF_API_KEY')
 
-# Load a constitution file (see examples/educational_assistant.json for an example)
-# Replace with the actual path to your constitution file
-constitution = load_constitution('examples/constitutions/educational_assistant.json')
-
-# Initialize the ModelInteractor with a model
-# Provide the Hugging Face API key if you want to use the Hugging Face inference API of that model (it must exist)
-# If you don't provide an API key, the model will be used locally
-interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
-
 # Import prompts from a CSV file
 prompts = import_prompts_from_csv('examples/prompts/physics_and_history_questions_5-12.csv')
 
-# Run a single interaction to get a revised response for the first prompt in the list
-single_interaction_response = interactor.run_single_interaction(prompts, constitution, prompt_index=0)
-single_interaction_response
+# Load a constitutional principles file
+principles = load_principles('examples/principles/educational_assistant_short.json')
 
-# Run the interaction loop to get revised responses for all prompts
-responses = interactor.run_interaction_loop(input_prompts, constitution)
+# Instatiate ModelInteractor for usage with the (free) Hugging Face Inference API:
+interactor = ModelInteractor(hf_model="HuggingFaceH4/zephyr-7b-beta", hf_api_key=HF_API_KEY)
 
-# Display the responses from the interaction loop
+# Run loop to get improved answers for all prompts
+responses = interactor.run_answer_improvement_loop(prompts, principles)
+
+# Save training data with improved answers to a CSV file
+interactor.save_prompts_and_revisions_to_csv(responses, 'examples/training_data/educational_assistant_sft.csv')
+
+# For the first few prompts display the randomly selected critique and revision pairs,
+# and the generated intitial answer, critique, and revision.
+for response in responses[1:10]:
     print("\n#############################################")
-    print("user_prompt:\n", response["user_prompt"])
-    print("initial_answer:\n", response["initial_answer"])
-    print("critique_request:\n", response["critique_request"])
-    print("critique:\n", response["critique"])
-    print("revision_request:\n", response["revision_request"])
-    print("revision:\n", response["revision"])
+    print("### user_prompt:\n", response["user_prompt"])
+    print("### initial_answer:\n", response["initial_answer"])
+    print("### critique_request:\n", response["critique_request"])
+    print("### critique:\n", response["critique"])
+    print("### revision_request:\n", response["revision_request"])
+    print("### revision:\n", response["revision"])
 ```
 
-### Explanation
+This example demonstrates the following steps:
 
-- **Pipeline Initialization**: We start by initializing a text generation pipeline from Hugging Face's Transformers. You can specify any model compatible with the text generation task.
+1. Import prompts from a CSV file using import_prompts_from_csv.
+2. Load a constitutional principles file using load_principles.
+3. Instantiate the ModelInteractor class with the desired model and Hugging Face API key.
+4. Run the run_answer_improvement_loop method to generate improved answers for all prompts based on the loaded principles.
+5. Save the generated training data with improved answers to a CSV file using save_prompts_and_revisions_to_csv.
+6. Print the initial answer, critique, and revision for the first few prompts.
 
-- **Constitution Loading**: We load the constitution using `load_constitution`, which contains the instructions for generating prompts.
-
-- **Prompt Generation**: An instance of `PromptTemplate` is created, and an initial answer prompt is generated.
-
-- **Model Interactor**: We initialize the `ModelInteractor` class with the pipeline.
-
-- **Execute Single Interaction Run**: Using the `run_single_interaction` method of `ModelInteractor`, we pass the user prompt to generate an initial answer, a critique, and a revised answer.
-
-- **Interaction Loop**: Demonstrates how to use the `run_interaction_loop` method to process multiple prompts and generate initial answers, critiques, and revisions.
-
-### Notes
-
-- Make sure to replace `'path/to/constitution.json'` and the chosen model in the pipeline defition with the actual path to your constitution file and the model you intend to use.
-- This example assumes that the necessary packages (`transformers`, etc.) are installed and that `constitution.json` is correctly formatted.
-- The exact output and behavior will depend on the model used and the contents of the constitution instructions.
+Note: This example uses the given example prompt and constititution files (`physics_and_history_questions_5-12.csv` and `educational_assistant_short.json`) that you might want to change according to your specific requirements. Additionally, you'll need to set the HF_API_KEY environment variable with your Hugging Face API key to use the free Inference API or a dedicated inference server that you setup on Hugging Face.
 
 ## Contributing
 
