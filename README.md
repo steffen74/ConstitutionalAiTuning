@@ -47,7 +47,7 @@ Further, it provides methods for running single interactions as well as looping 
 
 ### Example
 
-Here's an example of how to use ConstitutionalAiTuning to generate improved answers for an sintructional tuning of an LLM:
+Here's an example of how to use ConstitutionalAiTuning to generate improved answers for an intructional tuning of an LLM:
 
 ```python
 # Install transformers from source - only needed for versions <= v4.34
